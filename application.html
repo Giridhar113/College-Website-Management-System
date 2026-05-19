@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Student Application - JGS Group</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img class="logo-image" src="images/jgs-official-logo.png" alt="JGS Group logo"><span>JGS Group</span></a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <details class="nav-more">
+          <summary>Academics</summary>
+          <div class="nav-more-menu">
+            <a href="schools.html">Schools</a>
+            <a href="intermediate.html">Intermediate</a>
+            <a href="higher-education.html">Higher Education</a>
+          </div>
+        </details>
+        <a href="placements.html">Placements</a>
+        <details class="nav-more">
+          <summary>Resources</summary>
+          <div class="nav-more-menu">
+            <a href="parents.html">Parents</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="downloads.html">Downloads</a>
+          </div>
+        </details>
+        <a href="contact.html">Contact</a>
+        <details class="nav-more portal-more">
+          <summary>Portals</summary>
+          <div class="nav-more-menu">
+            <a href="login.html">Login Center</a>
+            <a href="login.html">Student Portal</a>
+            <a href="login.html">Parent Portal</a>
+            <a class="staff-login-link" href="staff-portal.html" target="_blank" rel="noopener">Staff Portal</a>
+          </div>
+        </details>
+        <a class="nav-apply-link" href="application.html">Apply</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner application-banner">
+      <img src="images/campus-banner.jpg" alt="JGS campus application banner">
+      <div class="banner-content">
+        <p class="eyebrow">Admissions Open</p>
+        <h1>New Student Application</h1>
+        <p>Apply for JGS Schools, Intermediate, or BTech programs. Submit your details and our admissions team will contact you.</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <section class="section application-layout">
+        <form class="form-card application-form" id="applicationForm">
+          <h2>Application Form</h2>
+          <div class="form-row">
+            <div class="field"><label for="appName">Full Name</label><input id="appName" type="text" required></div>
+            <div class="field"><label for="appPhone">Mobile Number</label><input id="appPhone" type="tel" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="appEmail">Email</label><input id="appEmail" type="email" required></div>
+            <div class="field"><label for="appDob">Date of Birth</label><input id="appDob" type="date" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="appProgram">Program Applying For</label>
+              <select id="appProgram" required>
+                <option value="">Select program</option>
+                <option>JGS School Admission</option>
+                <option>Intermediate - Science</option>
+                <option>Intermediate - Commerce</option>
+                <option>Intermediate - Arts</option>
+                <option>BTech - AI&amp;ML</option>
+                <option>BTech - CS</option>
+                <option>BTech - Civil</option>
+                <option>BTech - ECE</option>
+                <option>BTech - Mechanical</option>
+                <option>BTech - EEE</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="appQuota">Quota</label>
+              <select id="appQuota" required>
+                <option value="">Select quota</option>
+                <option>Free Seat</option>
+                <option>Management</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="appPrevious">Previous School / College</label><input id="appPrevious" type="text" required></div>
+            <div class="field"><label for="appMarks">Previous Marks / Percentage</label><input id="appMarks" type="text" placeholder="Example: 88%" required></div>
+          </div>
+          <div class="field"><label for="appAddress">Address</label><textarea id="appAddress" rows="4" required></textarea></div>
+          <button class="btn" type="submit">Submit Application</button>
+          <p id="applicationStatus" class="section-lead"></p>
+        </form>
+
+        <aside class="application-side">
+          <article class="card">
+            <span class="course-label">Admission Steps</span>
+            <h3>How it works</h3>
+            <p>Submit the application, attend counseling, verify documents, select your quota, and confirm admission.</p>
+          </article>
+          <article class="card">
+            <span class="course-label">Documents</span>
+            <h3>Keep ready</h3>
+            <p>Previous marks memo, transfer certificate, Aadhaar, passport-size photos, caste/income certificate if applicable.</p>
+          </article>
+          <article class="card">
+            <span class="course-label">Support</span>
+            <h3>Need help?</h3>
+            <p>Admissions: +91 22 4890 1100<br>Email: admissions@jgsinstitutes.edu.in</p>
+          </article>
+          <article class="card application-status-card">
+            <span class="course-label">Application Status</span>
+            <h3>Track your application</h3>
+            <p>Enter your application number or registered mobile number to check the current admission stage.</p>
+            <div class="field"><label for="applicationStatusInput">Application No. / Mobile</label><input id="applicationStatusInput" type="text" placeholder="Example: JGS-APP-2026"></div>
+            <button class="btn secondary" type="button" id="checkApplicationStatus">Check Status</button>
+            <p id="applicationTrackResult" class="section-lead"></p>
+          </article>
+        </aside>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div><h2>JGS Group</h2><p>Building confident learners through disciplined academics, strong mentoring, and career-focused education.</p></div>
+      <div><h3>Quick Links</h3><a href="schools.html">JGS Schools</a><a href="intermediate.html">JGS Intermediate</a><a href="higher-education.html">JGS Group of Institutes</a><a href="application.html">Apply Now</a></div>
+      <div><h3>Contact</h3><p>Admissions: +91 22 4890 1100</p><p>Office: office@jgsinstitutes.edu.in</p><p>Andheri East, Mumbai, Maharashtra 400069</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

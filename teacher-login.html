@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Login - JGS Group</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="staff-system-header">
+    <a href="staff-portal.html" class="staff-system-brand">
+      <img src="images/jgs-official-logo.png" alt="JGS Group logo">
+      <span>JGS Teacher System</span>
+    </a>
+    <a class="staff-return-link top-return" href="staff-portal.html">Back to Staff Portal</a>
+  </header>
+
+  <main class="page auth-page staff-auth-page teacher-auth-page" id="authSection">
+    <section class="staff-auth-shell">
+      <aside class="staff-auth-panel">
+        <p class="eyebrow">Faculty Workspace</p>
+        <h1>Teacher access for academic tracking.</h1>
+        <p>Open class rosters, attendance calendar, grade input, remedial plans, and faculty academic profile with secure credentials.</p>
+        <div class="staff-auth-stats">
+          <article><span>Faculty</span><strong>42</strong></article>
+          <article><span>Branches</span><strong>6</strong></article>
+          <article><span>Seats</span><strong>50</strong></article>
+        </div>
+      </aside>
+    <form class="form-card auth-card staff-auth-card" id="loginForm" data-portal="teacher">
+      <div class="staff-auth-head">
+        <img src="images/jgs-official-logo.png" alt="JGS Group logo">
+        <div>
+          <h2>Staff Portal</h2>
+          <p>JGS Group of Institutes Secure Access</p>
+        </div>
+      </div>
+      <div class="staff-single-role" aria-label="Teacher login type">
+        <span>Teacher Access</span>
+      </div>
+      <p class="section-lead">Faculty can access profile details, class roster, attendance tracking, grades, and failed-student support actions.</p>
+      <div class="credential-chip"><span>Official Faculty Access</span><strong>Use your institution-issued faculty ID and password</strong><small>Forgot your credentials? Contact the academic office for help.</small></div>
+      <div class="field"><label for="loginId">Teacher ID</label><input id="loginId" type="text" placeholder="JGS-FAC-001" required></div>
+      <div class="field"><label for="password">Password</label><input id="password" type="password" placeholder="Enter password" required></div>
+      <div class="login-support-actions">
+        <button class="text-action forgot-access-link" type="button" data-forgot-access>Forgot ID / Password</button>
+        <span data-last-login>Last login will appear after secure access.</span>
+      </div>
+      <div class="portal-help-strip"><strong>Need help?</strong><span>Contact admissions/help desk for ID reset, password support, or account unlock.</span></div>
+      <div class="portal-maintenance-note"><strong>Portal status:</strong> Online for official student and staff services.</div>
+      <button class="btn" type="submit">Access System</button>
+      <div class="portal-security-note">
+        <strong>Authorized access only.</strong>
+        <p>Attendance, marks, academic background, and student support records must be updated only through official faculty workflows.</p>
+      </div>
+      <a class="staff-return-link" href="index.html">Return to Main Website</a>
+      <p id="loginStatus" class="section-lead"></p>
+    </form>
+    </section>
+  </main>
+
+  <main class="page portal-dashboard teacher-dashboard hidden" id="dashboardSection">
+    <section class="dashboard-hero admin-hero teacher-dashboard-hero">
+      <div class="admin-hero-copy">
+        <p class="eyebrow">Teacher Portal</p>
+        <h1 id="teacherNameDisplay">Dr. Anitha Rao</h1>
+        <p id="teacherMetaDisplay">Teacher ID: JGS-FAC-204 - Assigned Subject: Machine Learning - Branch: AI&ML</p>
+        <div class="admin-hero-meta">
+          <span id="teacherDepartmentDisplay">Department: AI&ML</span>
+          <span id="teacherClassDisplay">Class: Semester V</span>
+          <span>Status: Active Faculty</span>
+        </div>
+      </div>
+      <div class="admin-hero-card">
+        <span class="login-icon">TC</span>
+        <strong>Faculty Workspace</strong>
+        <p>Roster, attendance, grades, and academic updates</p>
+        <button class="btn secondary" type="button" data-logout>Logout</button>
+      </div>
+    </section>
+
+    <section class="admin-toolbar">
+      <div>
+        <p class="eyebrow">Faculty Snapshot</p>
+        <h2>Today&apos;s Class Overview</h2>
+      </div>
+    </section>
+
+    <section class="portal-feature-grid teacher-action-grid">
+      <article class="form-card portal-feature-card"><span>Today&apos;s Classes</span><h3>3 sessions scheduled</h3><p>Machine Learning theory, AI lab, and project review are planned for today.</p></article>
+      <article class="form-card portal-feature-card alert-card"><span>Pending Attendance</span><h3>1 class pending</h3><p>Submit today&apos;s attendance before 5:00 PM.</p></article>
+      <article class="form-card portal-feature-card"><span>Marks Upload</span><h3>12 records pending</h3><p>Internal assessment marks require verification and submission.</p></article>
+      <article class="form-card portal-feature-card"><span>Low Attendance Alerts</span><h3>4 students below 75%</h3><p>Call mentor review and parent communication if attendance remains low.</p></article>
+      <article class="form-card portal-feature-card"><span>Parent Notes</span><h3>Communication log</h3><p>Record academic concerns, counselling notes, and progress updates for parents.</p></article>
+      <article class="form-card portal-feature-card"><span>Quick Exports</span><h3>Reports</h3><button class="mini-btn" type="button" data-export-report="attendance">Export Attendance</button><button class="mini-btn" type="button" data-export-report="marks">Export Marks</button></article>
+    </section>
+
+    <section class="portal-grid four admin-metrics">
+      <article class="metric-card dashboard-list-card active"><span>Class Strength</span><strong id="teacherClassStrength">48</strong><p id="teacherClassStrengthText">AI&ML Semester V</p><em>50 max capacity</em></article>
+      <article class="metric-card dashboard-list-card"><span>Average Attendance</span><strong id="teacherAvgAttendance">86%</strong><p>Current month</p><em>Track daily</em></article>
+      <article class="metric-card dashboard-list-card"><span>Grades Pending</span><strong id="teacherGradesPending">12</strong><p>Internal assessment</p><em>Update marks</em></article>
+      <article class="metric-card dashboard-list-card"><span>Subject</span><strong id="teacherSubjectShort">ML</strong><p id="teacherSubjectFull">Machine Learning</p><em>Assigned</em></article>
+    </section>
+
+    <section class="dashboard-visual-grid teacher-visuals">
+      <article class="chart-card">
+        <div class="chart-head"><span>Class Capacity</span><strong id="teacherCapacityChartLabel">64%</strong></div>
+        <div class="donut-chart" id="teacherCapacityDonut" style="--value:64"><span id="teacherCapacityDonutText">64%</span></div>
+        <p>Current roster against 50-student branch capacity.</p>
+      </article>
+      <article class="chart-card wide">
+        <div class="chart-head"><span>Weekly Attendance</span><strong id="teacherWeeklyAverage">86%</strong></div>
+        <div class="mini-trend attendance-trend" id="teacherAttendanceTrend"></div>
+      </article>
+      <article class="chart-card">
+        <div class="chart-head"><span>Grade Split</span><strong>Live</strong></div>
+        <div class="grade-stack" id="teacherGradeStack"></div>
+        <p>Distribution from the current class roster.</p>
+      </article>
+    </section>
+
+    <section class="teacher-profile-grid">
+      <article class="form-card management-card">
+        <p class="eyebrow">Core Profile Details</p>
+        <h2>Teacher Details</h2>
+        <div class="teacher-detail-list">
+          <div><span>Teacher Name</span><strong id="teacherDetailName">Dr. Anitha Rao</strong></div>
+          <div><span>Teacher ID</span><strong id="teacherDetailId">JGS-FAC-204</strong></div>
+          <div><span>Assigned Subject</span><strong id="teacherDetailSubject">Machine Learning</strong></div>
+          <div><span>Branch</span><strong id="teacherDetailBranch">AI&ML</strong></div>
+          <div><span>Role</span><strong id="teacherDetailRole">Associate Professor</strong></div>
+          <div><span>Email</span><strong id="teacherDetailEmail">anitha.rao@jgsinstitutes.edu.in</strong></div>
+        </div>
+      </article>
+
+      <article class="form-card management-card teacher-academic-card">
+        <p class="eyebrow">Academic Background</p>
+        <h2>Faculty Academic Profile</h2>
+        <div class="academic-background-list" id="teacherAcademicBackground"></div>
+      </article>
+
+      <article class="form-card management-card teacher-calendar-card">
+        <p class="eyebrow">Attendance Calendar</p>
+        <h2>Select a Date</h2>
+        <div class="teacher-calendar" id="teacherCalendar" aria-label="Teacher attendance calendar">
+          <button type="button" data-attendance-date="2026-05-14"><span>Thu</span><strong>14</strong><em>Today</em></button>
+          <button type="button" data-attendance-date="2026-05-15"><span>Fri</span><strong>15</strong><em>Regular</em></button>
+          <button type="button" data-attendance-date="2026-05-16"><span>Sat</span><strong>16</strong><em>Lab</em></button>
+          <button type="button" data-attendance-date="2026-05-18"><span>Mon</span><strong>18</strong><em>Theory</em></button>
+          <button type="button" data-attendance-date="2026-05-19"><span>Tue</span><strong>19</strong><em>Review</em></button>
+          <button type="button" data-attendance-date="2026-05-20"><span>Wed</span><strong>20</strong><em>Internal</em></button>
+        </div>
+        <div class="attendance-form-panel" id="attendanceFormPanel" aria-live="polite">
+          <p class="eyebrow">Daily Update</p>
+          <h2 id="attendanceFormTitle">Attendance Tracking</h2>
+          <form class="portal-action-form" id="teacherAttendanceForm">
+            <div class="field"><label for="attendanceDate">Date</label><input id="attendanceDate" type="date" required></div>
+            <div class="field"><label>Branch / Class</label><select required><option>AI&ML - Semester V</option><option>AI&ML - Semester VI</option></select></div>
+            <div class="field"><label>Present Students</label><input type="number" min="0" max="50" placeholder="Example: 43" required></div>
+            <button class="btn" type="submit">Save Attendance</button>
+          </form>
+        </div>
+      </article>
+    </section>
+
+    <section class="portal-grid two">
+      <article class="form-card management-card">
+        <h2>Class Roster</h2>
+        <div class="table-wrap">
+          <table class="portal-table">
+            <thead><tr><th>Roll No.</th><th>Name</th><th>Branch</th><th>Attendance</th><th>Grade</th><th>Result Status</th></tr></thead>
+            <tbody id="teacherRosterRows">
+              <tr><td>22A31A0501</td><td>Arjun Reddy</td><td>AI&ML</td><td>82%</td><td>A</td><td>Clear</td></tr>
+              <tr><td>22JGS-AIML-002</td><td>Divya Kumar</td><td>AI&ML</td><td>91%</td><td>A+</td><td>Clear</td></tr>
+              <tr><td>22JGS-AIML-003</td><td>Kiran Naik</td><td>AI&ML</td><td>76%</td><td>B+</td><td>Remedial</td></tr>
+              <tr><td>22JGS-AIML-004</td><td>Meena Varma</td><td>AI&ML</td><td>88%</td><td>A</td><td>Clear</td></tr>
+              <tr><td>22JGS-AIML-005</td><td>Rahul K</td><td>AI&ML</td><td>79%</td><td>B+</td><td>Clear</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="form-card management-card">
+        <h2>Grade / Academic Input</h2>
+        <form class="portal-action-form">
+          <div class="field"><label>Student Roll Number</label><input type="text" placeholder="Example: 22A31A0501" required></div>
+          <div class="field"><label>Assessment Type</label><select required><option>Internal Exam 1</option><option>Internal Exam 2</option><option>Assignment</option><option>Lab Record</option><option>Final Review</option></select></div>
+          <div class="field"><label>Marks / Grade</label><input type="text" placeholder="Example: 42/50 or A" required></div>
+          <div class="field"><label>Academic Grade</label><select required><option>A+</option><option>A</option><option>B+</option><option>B</option><option>C</option></select></div>
+          <button class="btn" type="submit">Save Academic Record</button>
+        </form>
+      </article>
+    </section>
+
+    <section class="portal-grid two">
+      <article class="form-card management-card backlog-card">
+        <p class="eyebrow">Failure Support</p>
+        <h2>Teacher Remedial Process</h2>
+        <div class="backlog-steps compact">
+          <article><span>01</span><strong>Identify Failed Subject</strong><p>Confirm failed subject from academic result and internal marks.</p></article>
+          <article><span>02</span><strong>Assign Remedial Plan</strong><p>Schedule topic-wise revision, lab correction, and weekly practice tests.</p></article>
+          <article><span>03</span><strong>Update Progress</strong><p>Record attendance, test marks, mentor remarks, and readiness status.</p></article>
+          <article><span>04</span><strong>Recommend Supplementary</strong><p>Mark the student eligible for supplementary exam after preparation review.</p></article>
+        </div>
+      </article>
+
+      <article class="form-card management-card">
+        <h2>Backlog Action Form</h2>
+        <form class="portal-action-form">
+          <div class="field"><label>Student Roll Number</label><input type="text" placeholder="Example: 22JGS-AIML-001" required></div>
+          <div class="field"><label>Failed Subject</label><input type="text" placeholder="Example: Engineering Mathematics" required></div>
+          <div class="field"><label>Support Action</label><select required><option>Assign Remedial Class</option><option>Schedule Practice Test</option><option>Verify Lab Record</option><option>Recommend Supplementary Exam</option></select></div>
+          <div class="field"><label>Teacher Remark</label><textarea placeholder="Enter progress remark" required></textarea></div>
+          <button class="btn" type="submit">Save Backlog Support</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

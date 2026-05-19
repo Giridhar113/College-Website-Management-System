@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - JGS Group</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img class="logo-image" src="images/jgs-official-logo.png" alt="JGS Group logo"><span>JGS Group</span></a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <details class="nav-more">
+          <summary>Academics</summary>
+          <div class="nav-more-menu">
+            <a href="schools.html">Schools</a>
+            <a href="intermediate.html">Intermediate</a>
+            <a href="higher-education.html">Higher Education</a>
+          </div>
+        </details>
+        <a href="placements.html">Placements</a>
+        <details class="nav-more">
+          <summary>Resources</summary>
+          <div class="nav-more-menu">
+            <a href="parents.html">Parents</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="faculty.html">Faculty</a>
+            <a href="downloads.html">Downloads</a>
+          </div>
+        </details>
+        <a href="contact.html">Contact</a>
+        <details class="nav-more portal-more">
+          <summary>Portals</summary>
+          <div class="nav-more-menu">
+            <a href="login.html">Login Center</a>
+            <a href="login.html">Student Portal</a>
+            <a href="login.html">Parent Portal</a>
+            <a class="staff-login-link" href="staff-portal.html" target="_blank" rel="noopener">Staff Portal</a>
+          </div>
+        </details>
+        <a class="nav-apply-link" href="application.html">Apply</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <img src="images/campus-banner.jpg" alt="JGS campus contact">
+      <div class="contact-hero-content">
+        <p class="eyebrow">Contact JGS Group</p>
+        <h1>Reach the right office without waiting.</h1>
+        <p>Admissions, certificates, department support, and campus visits are coordinated through the JGS help desk.</p>
+      </div>
+    </section>
+
+    <section class="page contact-page">
+      <div class="contact-quick-grid">
+        <article><span>Admissions</span><strong>+91 22 4890 1100</strong><p>admissions@jgsinstitutes.edu.in</p></article>
+        <article><span>Office Hours</span><strong>9:00 AM - 5:00 PM</strong><p>Monday to Saturday</p></article>
+        <article><span>Campus</span><strong>Mumbai</strong><p>JGS Group of Institutes Main Campus, Andheri East</p></article>
+      </div>
+
+      <section class="contact-layout">
+        <form class="contact-form-card" id="contactForm">
+          <p class="eyebrow">Send Message</p>
+          <h2>How can we help?</h2>
+          <div class="contact-field-row">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+          </div>
+          <div class="field"><label for="department">Department</label><select id="department" name="department" required><option>Admissions</option><option>Schools Office</option><option>Intermediate Office</option><option>Institute of Tech</option><option>Certificates / Admin</option></select></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          <button class="btn" type="submit">Submit Message</button>
+          <p id="contactStatus" class="section-lead"></p>
+        </form>
+
+        <aside class="contact-directory-card">
+          <p class="eyebrow">Department Directory</p>
+          <h2>Direct Contacts</h2>
+          <div class="directory-list">
+            <div><span>Admissions Office</span><strong>+91 22 4890 1100</strong><p>admissions@jgsinstitutes.edu.in</p></div>
+            <div><span>JGS Schools</span><strong>+91 22 4890 1200</strong><p>schools@jgsinstitutes.edu.in</p></div>
+            <div><span>JGS Intermediate</span><strong>+91 22 4890 1300</strong><p>intermediate@jgsinstitutes.edu.in</p></div>
+            <div><span>Higher Education Office</span><strong>+91 22 4890 1400</strong><p>highereducation@jgsinstitutes.edu.in</p></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="contact-map-section">
+        <div class="contact-map-card">
+          <div>
+            <p class="eyebrow">Campus Location</p>
+            <h2>JGS Group of Institutes Main Campus, Mumbai</h2>
+            <p>Andheri East, Mumbai, Maharashtra 400069. Use the map below for campus visit planning and admissions office directions.</p>
+          </div>
+          <div class="map-frame modern-map">
+            <iframe title="JGS Group of Institutes Mumbai campus map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=72.8350%2C19.0950%2C72.8950%2C19.1350&amp;layer=mapnik&amp;marker=19.1136%2C72.8697"></iframe>
+            <div class="map-fallback-card">
+              <strong>JGS Group of Institutes, Mumbai</strong>
+              <p>Andheri East, Mumbai, Maharashtra 400069</p>
+              <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&query=Andheri%20East%2C%20Mumbai%2C%20Maharashtra%20400069" target="_blank" rel="noopener">Open in Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div><h2>JGS Group</h2><p>Building confident learners through disciplined academics, strong mentoring, and career-focused education.</p></div>
+      <div><h3>Quick Links</h3><a href="schools.html">JGS Schools</a><a href="intermediate.html">JGS Intermediate</a><a href="higher-education.html">JGS Group of Institutes</a><a href="contact.html">Contact Info</a></div>
+      <div><h3>Contact</h3><p>Admissions: +91 22 4890 1100</p><p>Office: office@jgsinstitutes.edu.in</p><p>Andheri East, Mumbai, Maharashtra 400069</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

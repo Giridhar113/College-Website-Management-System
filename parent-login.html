@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Login - JGS Group</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img class="logo-image" src="images/jgs-official-logo.png" alt="JGS Group logo"><span>JGS Group</span></a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <details class="nav-more">
+          <summary>Academics</summary>
+          <div class="nav-more-menu">
+            <a href="schools.html">Schools</a>
+            <a href="intermediate.html">Intermediate</a>
+            <a href="higher-education.html">Higher Education</a>
+          </div>
+        </details>
+        <a href="placements.html">Placements</a>
+        <details class="nav-more">
+          <summary>Resources</summary>
+          <div class="nav-more-menu">
+            <a href="parents.html">Parent Support</a>
+            <a href="facilities.html">Facilities & Labs</a>
+            <a href="faculty.html">Faculty Directory</a>
+            <a href="downloads.html">Downloads & Forms</a>
+            <a href="payment.html">Fee Payment</a>
+            <a href="contact.html">Admissions Help Desk</a>
+          </div>
+        </details>
+        <a href="contact.html">Contact</a>
+        <details class="nav-more portal-more">
+          <summary>Portals</summary>
+          <div class="nav-more-menu">
+            <a href="student-login.html">Student Portal</a>
+            <a href="parent-login.html">Parent Portal</a>
+            <a href="teacher-login.html">Teacher Portal</a>
+            <a href="admin-login.html">Admin Portal</a>
+            <a class="staff-login-link" href="staff-portal.html" target="_blank" rel="noopener">Staff Portal</a>
+          </div>
+        </details>
+        <a class="nav-apply-link" href="application.html">Apply</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="student-login-shell parent-login-shell" id="authSection">
+    <section class="student-auth-panel">
+      <div class="student-login-title">
+        <p class="eyebrow">Parent Portal</p>
+        <h1>Guardian access</h1>
+        <p>View student attendance, fee reminders, academic notices, and communication from the office.</p>
+        <div class="portal-people-strip" aria-label="JGS parent and student support">
+          <img src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fHww" alt="Parent support">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Guardian profile">
+          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww" alt="Academic mentor">
+        </div>
+      </div>
+      <form class="student-login-card clean-login-card" id="loginForm" data-portal="parent">
+        <div class="auth-card-head">
+          <span class="login-icon">PR</span>
+          <div>
+            <p class="eyebrow">Parent / Guardian</p>
+            <h2>Login to Parent Dashboard</h2>
+          </div>
+        </div>
+        <p class="section-lead">Use the guardian ID issued by the institution.</p>
+        <div class="credential-chip"><span>Official Parent Access</span><strong>Use your institution-issued Parent ID and password</strong><small>Need access support? Contact admissions or the academic office.</small></div>
+        <div class="field"><label for="loginId">Parent ID / Mobile</label><input id="loginId" type="text" placeholder="JGS-PAR-001" required></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" placeholder="Enter password" required></div>
+        <div class="login-support-actions">
+          <button class="text-action forgot-access-link" type="button" data-forgot-access>Forgot ID / Password</button>
+          <span data-last-login>Last login will appear after secure access.</span>
+        </div>
+        <div class="portal-help-strip"><strong>Need help?</strong><span>Contact the office for ID reset, password support, or account unlock.</span></div>
+        <button class="btn" type="submit">Open Parent Dashboard</button>
+        <div class="portal-security-note"><strong>Security notice</strong><p>JGS staff will never ask for your password or OTP. Use only official portal links.</p></div>
+        <p id="loginStatus" class="section-lead"></p>
+      </form>
+    </section>
+  </main>
+
+  <main class="page portal-dashboard student-dashboard hidden" id="dashboardSection">
+    <section class="dashboard-hero admin-hero student-dashboard-hero">
+      <div class="admin-hero-copy">
+        <p class="eyebrow">Parent Dashboard</p>
+        <h1>Student progress overview</h1>
+        <p>Monitor attendance, fee reminders, academic updates, notices, and communication from JGS Group of Institutes.</p>
+        <div class="admin-hero-meta">
+          <span>Linked Student: 22JGS-AIML-001</span>
+          <span>Academic Year: 2026-27</span>
+          <span>Status: Active Guardian</span>
+        </div>
+      </div>
+      <div class="admin-hero-card">
+        <span class="login-icon">PR</span>
+        <strong>Parent Services</strong>
+        <p>Attendance, fees, notices, and student support</p>
+        <button class="btn secondary" type="button" data-logout>Logout</button>
+      </div>
+    </section>
+
+    <section class="portal-feature-grid">
+      <article class="form-card portal-feature-card"><span>Attendance</span><h3>82%</h3><p>Student is currently above minimum attendance requirement.</p></article>
+      <article class="form-card portal-feature-card"><span>Fee Reminder</span><h3>Rs. 12,500 due</h3><p>Next due date: 30 June 2026.</p></article>
+      <article class="form-card portal-feature-card"><span>Academic Update</span><h3>CGPA 8.4</h3><p>Current semester performance is stable.</p></article>
+      <article class="form-card portal-feature-card"><span>Office Notice</span><h3>Document verification desk open</h3><p>Contact the office for certificate or fee support.</p></article>
+      <article class="form-card portal-feature-card"><span>Parent Communication</span><h3>Mentor meeting available</h3><p>Book a discussion with the faculty mentor during office hours.</p></article>
+      <article class="form-card portal-feature-card"><span>Safety & Discipline</span><h3>Active monitoring</h3><p>Attendance and academic conduct are reviewed by the department.</p></article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

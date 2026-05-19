@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Curriculum - JGS Group of Institutes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img class="logo-image" src="images/jgs-official-logo.png" alt="JGS Group logo"><span>JGS Group</span></a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <details class="nav-more">
+          <summary>Academics</summary>
+          <div class="nav-more-menu">
+            <a href="schools.html">Schools</a>
+            <a href="intermediate.html">Intermediate</a>
+            <a href="higher-education.html">Higher Education</a>
+          </div>
+        </details>
+        <a href="placements.html">Placements</a>
+        <details class="nav-more">
+          <summary>Resources</summary>
+          <div class="nav-more-menu">
+            <a href="parents.html">Parent Support</a>
+            <a href="facilities.html">Facilities & Labs</a>
+            <a href="faculty.html">Faculty Directory</a>
+            <a href="downloads.html">Downloads & Forms</a>
+            <a href="payment.html">Fee Payment</a>
+            <a href="contact.html">Admissions Help Desk</a>
+          </div>
+        </details>
+        <a href="contact.html">Contact</a>
+        <details class="nav-more portal-more">
+          <summary>Portals</summary>
+          <div class="nav-more-menu">
+            <a href="student-login.html">Student Portal</a>
+            <a href="parent-login.html">Parent Portal</a>
+            <a href="teacher-login.html">Teacher Portal</a>
+            <a href="admin-login.html">Admin Portal</a>
+            <a class="staff-login-link" href="staff-portal.html" target="_blank" rel="noopener">Staff Portal</a>
+          </div>
+        </details>
+        <a class="nav-apply-link" href="application.html">Apply</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner curriculum-hero">
+      <img src="images/higher-education-banner.jpg" alt="JGS engineering curriculum banner">
+      <div class="banner-content">
+        <p class="eyebrow" id="courseCode">B.Tech</p>
+        <h1 id="courseTitle">Engineering Curriculum</h1>
+        <p id="courseIntro">Semester-wise curriculum, labs, placements, and career guidance for the selected engineering branch.</p>
+        <div class="hero-actions">
+          <a class="btn" id="applyCourseButton" href="application.html">Apply Now</a>
+          <a class="btn secondary" href="higher-education.html">Back to Courses</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page curriculum-page">
+      <section class="higher-stat-grid">
+        <article><span>Program</span><strong id="courseProgram">B.Tech</strong></article>
+        <article><span>Duration</span><strong>4 Years / 8 Semesters</strong></article>
+        <article><span>Intake</span><strong>50 Students</strong></article>
+        <article><span>Focus</span><strong id="courseFocus">Engineering Practice</strong></article>
+      </section>
+
+      <section class="section">
+        <div class="dashboard-header">
+          <div>
+            <p class="eyebrow">Semester Structure</p>
+            <h2 id="curriculumHeading">Subjects from 1st to 8th Semester</h2>
+          </div>
+          <a class="btn secondary compact-btn" href="higher-education.html">Back to Courses</a>
+        </div>
+        <div class="semester-curriculum-grid" id="semesterCurriculumGrid"></div>
+      </section>
+
+      <section class="section placement-slider-section">
+        <div class="dashboard-header">
+          <div>
+            <p class="eyebrow">Placement Support</p>
+            <h2>Placement Slider</h2>
+          </div>
+          <div class="slider-controls">
+            <button type="button" class="slider-btn" id="placementPrev" aria-label="Previous placement">&lsaquo;</button>
+            <button type="button" class="slider-btn" id="placementNext" aria-label="Next placement">&rsaquo;</button>
+          </div>
+        </div>
+        <div class="placement-slider" id="placementSlider"></div>
+      </section>
+
+      <section class="section higher-feature-band">
+        <article>
+          <p class="eyebrow" id="labEyebrow">Branch Labs</p>
+          <h2>Practical exposure every year.</h2>
+          <p id="labDescription">Students learn through structured labs, workshops, project practice, and faculty-led technical mentoring.</p>
+        </article>
+        <article>
+          <p class="eyebrow">Career Paths</p>
+          <h2 id="careerHeading">Career-ready learning.</h2>
+          <p id="careerDescription">The curriculum connects classroom subjects with internships, portfolio work, placement training, and higher-study preparation.</p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div><h2>JGS Group</h2><p>Building confident learners through disciplined academics, strong mentoring, and career-focused education.</p></div>
+      <div><h3>Quick Links</h3><a href="schools.html">JGS Schools</a><a href="intermediate.html">JGS Intermediate</a><a href="higher-education.html">JGS Group of Institutes</a><a href="contact.html">Contact Info</a></div>
+      <div><h3>Contact</h3><p>Admissions: +91 22 4890 1100</p><p>Office: office@jgsinstitutes.edu.in</p><p>Andheri East, Mumbai, Maharashtra 400069</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+

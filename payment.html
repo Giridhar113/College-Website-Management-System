@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Fee Payment - JGS Group</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img class="logo-image" src="images/jgs-official-logo.png" alt="JGS Group logo"><span>JGS Group</span></a>
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <details class="nav-more">
+          <summary>Academics</summary>
+          <div class="nav-more-menu">
+            <a href="schools.html">Schools</a>
+            <a href="intermediate.html">Intermediate</a>
+            <a href="higher-education.html">Higher Education</a>
+          </div>
+        </details>
+        <a href="placements.html">Placements</a>
+        <details class="nav-more">
+          <summary>Resources</summary>
+          <div class="nav-more-menu">
+            <a href="parents.html">Parent Support</a>
+            <a href="facilities.html">Facilities & Labs</a>
+            <a href="faculty.html">Faculty Directory</a>
+            <a href="downloads.html">Downloads & Forms</a>
+            <a href="payment.html">Fee Payment</a>
+            <a href="contact.html">Admissions Help Desk</a>
+          </div>
+        </details>
+        <a href="contact.html">Contact</a>
+        <details class="nav-more portal-more">
+          <summary>Portals</summary>
+          <div class="nav-more-menu">
+            <a href="student-login.html">Student Portal</a>
+            <a href="parent-login.html">Parent Portal</a>
+            <a href="teacher-login.html">Teacher Portal</a>
+            <a href="admin-login.html">Admin Portal</a>
+            <a class="staff-login-link" href="staff-portal.html" target="_blank" rel="noopener">Staff Portal</a>
+          </div>
+        </details>
+        <a class="nav-apply-link" href="application.html">Apply</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner payment-banner">
+      <img src="images/campus-banner.jpg" alt="JGS fee payment office">
+      <div class="banner-content">
+        <p class="eyebrow">Student Fee Payment</p>
+        <h1>Clear pending fee to unlock exam services.</h1>
+        <p>Students with a pending balance must complete fee payment before hall ticket download and exam verification.</p>
+      </div>
+    </section>
+
+    <section class="page">
+      <section class="section payment-layout">
+        <form class="form-card payment-card" id="paymentForm">
+          <p class="eyebrow">Online Fee Desk</p>
+          <h2>Pay Remaining Fee</h2>
+          <div class="form-row">
+            <div class="field"><label for="paymentStudentId">Student ID</label><input id="paymentStudentId" type="text" required></div>
+            <div class="field"><label for="paymentAmount">Amount</label><input id="paymentAmount" type="text" required></div>
+          </div>
+          <input type="hidden" name="gateway" value="stripe">
+          <div class="field"><label for="paymentMethod">Payment Method</label><select id="paymentMethod" required><option>UPI</option><option>Debit / Credit Card</option><option>Net Banking</option><option>Office Counter</option></select></div>
+          <button class="btn secure-payment-btn" type="submit">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-7-2a2 2 0 0 1 4 0v2h-4V7Zm3 9.73V18h-2v-1.27a2 2 0 1 1 2 0Z"/>
+            </svg>
+            <span>Proceed to Secure Payment</span>
+          </button>
+          <div class="payment-trust-badge">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12 2 4.5 5.2v5.7c0 4.8 3.2 9.2 7.5 10.6 4.3-1.4 7.5-5.8 7.5-10.6V5.2L12 2Zm-1.1 13.3-3-3 1.4-1.4 1.6 1.6 4.1-4.1 1.4 1.4-5.5 5.5Z"/>
+            </svg>
+            <span>SSL Secure - 256-bit Encryption</span>
+          </div>
+          <p id="paymentStatus" class="section-lead"></p>
+        </form>
+        <aside class="form-card payment-help-card">
+          <p class="eyebrow">Hall Ticket Rule</p>
+          <h2>Fee clearance is required.</h2>
+          <div class="notice-list">
+            <div><span>Step 1</span><strong>Pay the pending balance shown in the student dashboard.</strong></div>
+            <div><span>Step 2</span><strong>Return to Student Portal and login again.</strong></div>
+            <div><span>Step 3</span><strong>Download hall ticket after payment verification.</strong></div>
+          </div>
+          <a class="btn secondary" href="student-login.html">Back to Student Portal</a>
+        </aside>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div><h2>JGS Group</h2><p>Official fee payment support for student exam services.</p></div>
+      <div><h3>Support</h3><p>Fee Office: +91 22 4890 1100</p><p>office@jgsinstitutes.edu.in</p></div>
+      <div><h3>Security</h3><p>Use only official payment links from this website.</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

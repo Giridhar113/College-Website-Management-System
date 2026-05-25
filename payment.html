@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fee Payment | JGS Group of Institutes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0B1A35;--section:#112347;--card:#1A3260;--input:#0f1f45;--gold:#F5A623;--gold2:#FFC85C;--text:#fff;--sec:#B8C8E8;--muted:#6B82A8;--border:rgba(255,255,255,.12);--success:#22C97A;--error:#E84646}
+    body{min-height:100vh;font-family:'DM Sans',sans-serif;background:radial-gradient(circle at 12% 8%,rgba(245,166,35,.15),transparent 24rem),linear-gradient(135deg,#07142b,var(--bg));color:var(--text);line-height:1.55}
+    h1,h2,h3,b{font-family:'Syne',sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit;font-size:16px}
+    .shell{width:min(1120px,calc(100vw - 32px));min-height:100vh;margin:0 auto;display:grid;grid-template-columns:1fr 430px;gap:22px;align-items:center;padding:38px 0}
+    .panel,.summary{padding:24px;border:1px solid var(--border);border-radius:24px;background:rgba(17,35,71,.92);box-shadow:0 28px 80px rgba(0,0,0,.35)}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}.mark{width:52px;height:52px;display:grid;place-items:center;border-radius:14px;background:var(--gold);color:var(--bg);font-weight:800}.badge{display:inline-flex;min-height:32px;align-items:center;padding:0 10px;border-radius:999px;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);color:var(--gold);font-weight:800;font-size:13px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:14px}label{display:block;margin-bottom:6px;color:var(--sec)}input,select{width:100%;min-height:48px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--input);color:var(--text);outline:none}input:focus,select:focus{border-color:rgba(245,166,35,.45)}
+    .methods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 18px}.method{min-height:70px;border:1px solid var(--border);border-radius:14px;background:var(--card);color:var(--sec);font-weight:800}.method.active{border-color:rgba(245,166,35,.45);background:rgba(245,166,35,.12);color:var(--gold)}
+    .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;border:0;border-radius:10px;font-weight:800}.primary{width:100%;background:var(--gold);color:var(--bg)}.primary:hover{background:var(--gold2)}.secondary{background:var(--card);border:1px solid var(--border);color:var(--text)}
+    .line{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);color:var(--sec)}.line b{color:var(--text)}.total b{color:var(--gold);font-size:28px}.status{display:none;margin-top:14px;padding:14px;border-radius:12px}.status.show{display:block}.ok{background:rgba(34,201,122,.1);border:1px solid rgba(34,201,122,.25);color:var(--success)}.err{background:rgba(232,70,70,.1);border:1px solid rgba(232,70,70,.25);color:var(--error)}
+    .receipt{display:none;margin-top:16px;padding:16px;border-radius:14px;background:#fff;color:#111}.receipt.show{display:block}.receipt h3{color:#0B1A35}.back{position:fixed;left:18px;top:18px;min-height:42px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;background:rgba(17,35,71,.85);border:1px solid var(--border)}
+    @media(max-width:900px){.shell{grid-template-columns:1fr;padding-top:78px}.methods,.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <a class="back" id="back-link" href="student-dashboard.html#fees">Back to dashboard</a>
+  <main class="shell">
+    <section class="panel">
+      <div class="brand"><div class="mark">JGS</div><div><span class="badge">Secure Fee Payment</span><h1>Pay semester fee</h1><p style="color:var(--sec)">Demo payment flow for JGS portal. This simulates Razorpay/PayU and generates a receipt locally.</p></div></div>
+      <form id="payment-form">
+        <div class="grid"><div class="field"><label>Student name</label><input id="student-name" required /></div><div class="field"><label>Roll number</label><input id="roll" required /></div></div>
+        <div class="grid"><div class="field"><label>Program / branch</label><input id="branch" required /></div><div class="field"><label>Amount</label><input id="amount" type="number" value="86000" required /></div></div>
+        <label>Payment method</label><div class="methods"><button class="method active" type="button" data-method="UPI">UPI</button><button class="method" type="button" data-method="Card">Card</button><button class="method" type="button" data-method="Net Banking">Net Banking</button></div>
+        <div class="field" id="method-field"><label>UPI ID / Card last 4 / Bank name</label><input id="method-detail" value="parent@upi" required /></div>
+        <button class="btn primary" type="submit">Confirm Payment</button>
+        <div class="status" id="status"></div>
+      </form>
+      <div class="receipt" id="receipt"></div>
+    </section>
+    <aside class="summary">
+      <h2>Fee Summary</h2>
+      <div class="line"><span>Tuition</span><b>Rs. 72,000</b></div>
+      <div class="line"><span>Lab</span><b>Rs. 8,000</b></div>
+      <div class="line"><span>Library</span><b>Rs. 2,500</b></div>
+      <div class="line"><span>Other</span><b>Rs. 3,500</b></div>
+      <div class="line total"><span>Total payable</span><b>Rs. 86,000</b></div>
+      <p style="margin-top:16px;color:var(--sec)">After confirmation, receipt is saved in this browser and can be printed or shared on WhatsApp.</p>
+      <button class="btn secondary" type="button" onclick="printReceipt()" style="margin-top:14px;width:100%">Print receipt</button>
+      <a class="btn secondary" id="wa-share" href="https://wa.me/?text=JGS%20fee%20payment%20receipt" target="_blank" rel="noopener" style="margin-top:10px;width:100%">WhatsApp receipt</a>
+    </aside>
+  </main>
+  <script>
+    const params=new URLSearchParams(location.search),role=params.get('role')||'student',student=JSON.parse(localStorage.getItem('jgsSelectedStudent')||'null'),form=document.getElementById('payment-form'),statusBox=document.getElementById('status'),receipt=document.getElementById('receipt');
+    document.getElementById('back-link').href=role==='parent'?'parent-dashboard.html#fees':'student-dashboard.html#fees';
+    document.getElementById('student-name').value=student?.name||'Riya Sharma';document.getElementById('roll').value=student?.roll||'JGS2026CS041';document.getElementById('branch').value=student?.branch||'Computer Science';
+    let method='UPI';document.querySelectorAll('.method').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.method').forEach(b=>b.classList.remove('active'));btn.classList.add('active');method=btn.dataset.method;document.getElementById('method-detail').value=method==='UPI'?'parent@upi':method==='Card'?'4242':'JGS Bank'}));
+    function show(text,type='ok'){statusBox.textContent=text;statusBox.className='status show '+type}
+    form.addEventListener('submit',e=>{e.preventDefault();const amount=Number(document.getElementById('amount').value||0);if(amount<1){show('Enter valid amount.','err');return}const rec={name:document.getElementById('student-name').value,roll:document.getElementById('roll').value,branch:document.getElementById('branch').value,amount,method,receipt:'JGS-RC-'+Date.now().toString().slice(-6),date:new Date().toLocaleString('en-IN')};localStorage.setItem('jgsLastPayment',JSON.stringify(rec));show('Payment successful. Receipt generated.','ok');renderReceipt(rec);});
+    function renderReceipt(rec){receipt.classList.add('show');receipt.innerHTML=`<h3>JGS Fee Receipt</h3><p><b>Receipt:</b> ${rec.receipt}</p><p><b>Name:</b> ${rec.name}</p><p><b>Roll:</b> ${rec.roll}</p><p><b>Branch:</b> ${rec.branch}</p><p><b>Amount:</b> Rs. ${rec.amount.toLocaleString('en-IN')}</p><p><b>Method:</b> ${rec.method}</p><p><b>Date:</b> ${rec.date}</p>`;document.getElementById('wa-share').href='https://wa.me/?text='+encodeURIComponent(`JGS fee paid. Receipt ${rec.receipt}, ${rec.name}, Rs. ${rec.amount.toLocaleString('en-IN')}`)}
+    function printReceipt(){const rec=JSON.parse(localStorage.getItem('jgsLastPayment')||'null');if(!rec){show('Complete payment first to print receipt.','err');return}const w=open('','','width=760,height=900');w.document.write('<title>JGS Receipt</title><style>body{font-family:Arial;padding:28px;color:#111}main{border:1px solid #999;padding:24px;border-radius:12px}</style><main>'+receipt.innerHTML+'</main>');w.document.close();w.print()}
+    const old=JSON.parse(localStorage.getItem('jgsLastPayment')||'null');if(old)renderReceipt(old);
+  </script>
+</body>
+</html>

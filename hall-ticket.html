@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hall Ticket | JGS Group of Institutes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── HALL TICKET DOCUMENT ── */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;padding:10px 24px;background:#1f1e1d;color:#111;font-family:'DM Sans',sans-serif}
+    .toolbar{max-width:736px;margin:0 auto 10px;display:flex;justify-content:space-between;gap:10px;align-items:center;color:#fff}.toolbar h1{font-family:'Syne';font-size:22px}.toolbar a,.toolbar button{min-height:40px;padding:0 12px;border-radius:9px;border:1px solid #2f4f87;background:#102347;color:#fff;text-decoration:none;font-weight:700;cursor:pointer}.toolbar button{background:#f5a623;color:#07152c;border:0}
+    .ticket{width:736px;margin:auto;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #d7d7d7;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .top{height:92px;padding:26px 20px;display:flex;gap:14px;align-items:center;background:#0b1a35;color:#fff;border-top:3px solid #f5a623}.logo{width:46px;height:46px;border-radius:10px;background:#f5a623;color:#07152c;display:grid;place-items:center;font-family:'Syne';font-weight:800}.top h1{font-family:'Syne';font-size:16px}.top p{color:#b8c8e8;font-size:12px}.tag{display:inline-flex;margin-top:4px;padding:2px 9px;border:1px solid #f5a623;border-radius:4px;color:#f5a623;font-size:11px;font-weight:800}
+    .body{padding:16px 20px 20px}.identity{display:grid;grid-template-columns:64px 1fr 1fr;gap:16px;align-items:start;margin-bottom:18px}.photo{height:76px;border:1px solid #d3d3d3;border-radius:6px;background:#f5f5f5;color:#aaa;display:grid;place-items:center;text-align:center;font-size:10px}.photo::before{content:"♙";display:block;font-size:22px}.student h2{font-size:16px}.student p{font-size:12px;color:#555}.detail{margin-top:8px}.detail span{display:block;text-transform:uppercase;color:#999;font-size:10px;font-weight:800}.detail b{display:block;font-size:12px;color:#333}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .label{margin:12px 0 8px;text-transform:uppercase;color:#999;font-size:11px;font-weight:800;border-top:1px solid #e7e7e7;padding-top:16px}
+    table{width:100%;border-collapse:separate;border-spacing:0 5px}th{background:#f0f0f0;color:#888;font-size:12px;text-align:left;padding:7px 10px}td{background:#fafafa;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:7px 10px;font-size:12px}th:first-child,td:first-child{border-radius:6px 0 0 6px}th:last-child,td:last-child{border-radius:0 6px 6px 0}
+    .bottom{display:grid;grid-template-columns:1fr 74px;gap:16px;align-items:end;margin-top:12px}.instructions{font-size:11px;color:#555;line-height:1.55}.qr{width:58px;height:58px;border:5px solid #fff;outline:1px solid #ddd;border-radius:5px;background:repeating-linear-gradient(90deg,#fff 0 4px,#111 4px 8px);position:relative}.qr::after{content:"";position:absolute;inset:9px;background:repeating-linear-gradient(0deg,transparent 0 4px,#111 4px 8px)}
+    .lock{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#666;color:#fff;font-size:22px;box-shadow:0 8px 20px rgba(0,0,0,.28)}
+    @media(max-width:780px){body{padding:0}.ticket{width:100%;border-radius:0}.toolbar{padding:10px;align-items:flex-start;flex-direction:column}.identity{grid-template-columns:64px 1fr}.details-grid{grid-column:2;grid-template-columns:1fr}}
+    @media print{body{background:#fff;padding:0}.toolbar,.lock{display:none}.ticket{box-shadow:none;border-radius:0;width:100%}.top{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+  <div class="toolbar"><h1>Hall Ticket</h1><div><a href="student-dashboard.html">Back</a> <button id="download" onclick="window.print()">Download / Print PDF</button></div></div>
+  <main class="ticket">
+    <header class="top"><div class="logo">JGS</div><div><h1>JGS Group of Institutes — Andheri East, Mumbai</h1><p>Mumbai University — End Semester Examination 2026-27</p><span class="tag">HALL TICKET</span></div></header>
+    <section class="body">
+      <div class="identity"><div class="photo">Photo</div><div class="student"><h2>Riya Sharma</h2><p>B.Tech — Computer Science · Semester IV</p><div class="detail"><span>Roll No</span><b>JGS/CSE/2026/041</b></div><div class="detail"><span>Exam Centre</span><b>Hall B, Block 2</b></div></div><div class="details-grid"><div class="detail"><span>Seat No</span><b>A-117</b></div><div class="detail"><span>Reporting Time</span><b>9:00 AM sharp</b></div></div></div>
+      <div class="label">Subjects & Schedule</div>
+      <table><tr><th>Subject</th><th>Date</th><th>Time</th><th>Duration</th></tr><tr><td>Database Management Systems</td><td>02 Jun</td><td>10:00 AM</td><td>3 hrs</td></tr><tr><td>Data Structures</td><td>05 Jun</td><td>10:00 AM</td><td>3 hrs</td></tr><tr><td>Engineering Mathematics</td><td>08 Jun</td><td>10:00 AM</td><td>3 hrs</td></tr><tr><td>Java Programming Lab</td><td>10 Jun</td><td>02:00 PM</td><td>2 hrs</td></tr></table>
+      <div class="bottom"><div class="instructions"><b>Instructions:</b> Carry this hall ticket and student ID card. Report 30 minutes before exam time. Mobile phones, smart watches and unauthorized notes are not allowed. QR code verifies authenticity through the public verification page. Download locks 30 minutes before the first exam.</div><div><div class="qr"></div></div></div>
+    </section>
+  </main>
+  <div class="lock" title="Download status">⌄</div>
+  <script>
+    /* ── HALL TICKET LOCK LOGIC ── */
+    const firstExam=new Date('2026-06-02T10:00:00+05:30'),lockAt=new Date(firstExam.getTime()-30*60*1000),download=document.getElementById('download');
+    if(new Date()>=lockAt){download.disabled=true;download.textContent='Download Locked';download.style.opacity='.55'}
+  </script>
+</body>
+</html>

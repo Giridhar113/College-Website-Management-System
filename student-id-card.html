@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student ID Card | JGS Group of Institutes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── ID CARD DOCUMENT ── */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;padding:18px;background:#1f1e1d;color:#f7f7f7;font-family:'DM Sans',sans-serif}
+    .toolbar{max-width:1120px;margin:0 auto 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .toolbar h1{font-family:'Syne',sans-serif;font-size:24px}.toolbar p{color:#9ca7bd}
+    .toolbar a,.toolbar button{min-height:42px;padding:0 14px;border:1px solid #2f4f87;border-radius:10px;background:#102347;color:#fff;text-decoration:none;font-weight:700;cursor:pointer}
+    .toolbar button{background:#f5a623;color:#07152c;border:0}
+    .wrap{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .holder{text-align:center;color:#a5a5a5;font-size:13px}
+    .card{width:300px;height:294px;margin:0 auto 8px;border-radius:16px;overflow:hidden;background:#0b1a35;border:1px solid #244371;position:relative;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+    .front{border-top:4px solid #f5a623}
+    .head{height:60px;padding:15px 16px;display:flex;gap:10px;align-items:center;background:#1a3260;border-bottom:1px solid rgba(255,255,255,.1)}
+    .logo{width:32px;height:32px;border-radius:9px;background:#f5a623;color:#07152c;display:grid;place-items:center;font-family:'Syne',sans-serif;font-weight:800}
+    .head h2{font-size:13px;line-height:1;color:#fff}.head p{font-size:10px;color:#b8c8e8}
+    .body{padding:16px;display:grid;grid-template-columns:70px 1fr;gap:14px;text-align:left}
+    .photo{height:84px;border:1px solid #315993;border-radius:7px;background:#1a3260;color:#8395b7;display:grid;place-items:center;font-size:11px;text-align:center}
+    .photo::before{content:"♙";display:block;font-size:24px;color:#f5a623;opacity:.65}
+    .name h1{font-size:16px;color:#fff;margin-bottom:2px;font-family:'Syne',sans-serif}.name .course{font-size:11px;color:#f5a623;font-weight:800}.name dl{margin-top:8px}.name dt{font-size:9px;color:#8fa2c5;text-transform:uppercase}.name dd{font-size:11px;color:#d9e4f6;font-weight:700;margin-bottom:2px}
+    .foot{position:absolute;left:16px;right:16px;bottom:12px;display:flex;justify-content:space-between;align-items:end;border-top:1px solid rgba(255,255,255,.08);padding-top:12px;text-align:left}
+    .valid span{display:block;color:#8fa2c5;font-size:9px}.valid b{color:#22c97a;font-size:12px}
+    .qr{width:44px;height:44px;border:5px solid #fff;border-radius:5px;background:repeating-linear-gradient(90deg,#fff 0 4px,#101010 4px 8px);position:relative}.qr::after{content:"";position:absolute;inset:8px;background:repeating-linear-gradient(0deg,transparent 0 4px,#101010 4px 8px)}
+    .back{padding:14px 16px;background:#102652}
+    .back-info{display:grid;gap:12px;text-align:left;margin-top:38px;color:#aebbe0;font-size:11px;font-weight:700}
+    .row{display:grid;grid-template-columns:18px 1fr;gap:8px}.row b{color:#f5a623}
+    .signs{position:absolute;left:16px;right:16px;bottom:18px;display:grid;grid-template-columns:1fr 1fr;gap:54px}
+    .sign{border-top:1px solid #42618f;padding-top:10px;color:#8192b3;font-size:9px;text-transform:uppercase}
+    @media(max-width:760px){.wrap{grid-template-columns:1fr}.toolbar{align-items:flex-start;flex-direction:column}}
+    @media print{body{background:#fff;padding:8mm}.toolbar{display:none}.wrap{grid-template-columns:1fr 1fr;gap:8mm}.card{box-shadow:none}.holder{color:#333}}
+  </style>
+</head>
+<body>
+  <div class="toolbar"><div><h1>JGS Student ID Card</h1><p>Front and back design with QR verification.</p></div><div><a href="student-dashboard.html">Back</a> <button onclick="window.print()">Download / Print PDF</button></div></div>
+  <main class="wrap">
+    <section class="holder">
+      <div class="card front">
+        <div class="head"><div class="logo">JGS</div><div><h2>JGS Group of Institutes</h2><p>Andheri East, Mumbai — Est. 1998</p></div></div>
+        <div class="body"><div class="photo">Photo</div><div class="name"><h1>Riya Sharma</h1><div class="course">B.Tech — Computer Science</div><dl><dt>Roll Number</dt><dd>JGS/CSE/2026/041</dd><dt>Semester</dt><dd>IV — Academic Year 2026-27</dd><dt>Blood Group</dt><dd>B+</dd></dl></div></div>
+        <div class="foot"><div class="valid"><span>Valid until</span><b>May 2027</b></div><div class="qr"></div></div>
+      </div>
+      <span>Front</span>
+    </section>
+    <section class="holder">
+      <div class="card back">
+        <div class="back-info">
+          <div class="row"><b>⌕</b><span>If found, please contact JGS Group of Institutes, Andheri East, Mumbai — +91 22 4890 1100</span></div>
+          <div class="row"><b>⌖</b><span>Andheri East, Mumbai, Maharashtra — 400069</span></div>
+          <div class="row"><b>△</b><span>This card is non-transferable. Misuse will result in disciplinary action.</span></div>
+          <div class="row"><b>◎</b><span>jgsinstitutes.edu.in</span></div>
+        </div>
+        <div class="signs"><div class="sign">Student Signature</div><div class="sign">Principal</div></div>
+      </div>
+      <span>Back</span>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | JGS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg-page:#0B1A35;--bg-section:#112347;--bg-card:#1A3260;--gold:#F5A623;--gold-tint:rgba(245,166,35,.10);--gold-border:rgba(245,166,35,.25);--text:#fff;--sec:#B8C8E8;--muted:#6B82A8;--border:rgba(255,255,255,.12)}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg-page);color:var(--text);line-height:1.55}h1,h2,h3,b{font-family:'Syne',sans-serif}a{color:inherit;text-decoration:none}
+    .shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}.side{padding:22px;background:var(--bg-section);border-right:1px solid var(--border)}.brand{display:flex;gap:12px;align-items:center;margin-bottom:28px}.mark{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:var(--gold);color:var(--bg-page);font-weight:800}.nav a{display:flex;align-items:center;min-height:44px;padding:0 12px;margin:6px 0;border-radius:10px;color:var(--sec)}.nav a.active,.nav a:hover{background:var(--gold-tint);color:var(--gold)}
+    .main{min-width:0}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 24px;background:rgba(11,26,53,.9);border-bottom:1px solid var(--border);position:sticky;top:0;backdrop-filter:blur(16px)}.logout{min-height:42px;display:inline-flex;align-items:center;padding:0 14px;border-radius:10px;background:var(--gold);color:var(--bg-page);font-weight:800}
+    .content{padding:24px;display:grid;gap:20px}.overview{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:16px}.card{padding:20px;border:1px solid var(--border);border-radius:18px;background:var(--bg-section)}.card.primary{background:linear-gradient(135deg,rgba(245,166,35,.16),rgba(26,50,96,.9));border-color:var(--gold-border)}.card b{display:block;color:var(--gold);font-size:34px;line-height:1}.card p,.card span{color:var(--sec)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.module{padding:18px;border-radius:16px;background:var(--bg-card);border:1px solid var(--border)}.module h3{margin-bottom:8px}.status{display:inline-flex;min-height:28px;align-items:center;padding:0 9px;border-radius:999px;background:var(--gold-tint);border:1px solid var(--gold-border);color:var(--gold);font-weight:800;font-size:12px}
+    table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}th{color:var(--sec);font-size:13px}.table-wrap{overflow:auto}
+    @media(max-width:900px){.shell{grid-template-columns:1fr}.side{display:none}.overview,.grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.overview,.grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <aside class="side"><div class="brand"><div class="mark">JGS</div><div><h2>Admin</h2><p style="color:var(--muted)">Portal control</p></div></div><nav class="nav"><a class="active" href="#overview">Overview</a><a href="#records">Records</a><a href="#modules">Modules</a><a href="#audit">Audit</a><a href="index.html">Main site</a></nav></aside>
+    <section class="main"><header class="top"><div><h1>Admin Dashboard</h1><p id="admin-id" style="color:var(--sec)">Admin session</p></div><a class="logout" href="admin-login.html">Logout</a></header><div class="content">
+      <section class="overview" id="overview"><article class="card primary"><h2>Today’s Overview</h2><p>Admissions, records, faculty access, fee desk and notices are ready. Review pending requests before publishing new updates.</p></article><article class="card"><b>1,190</b><span>Students</span></article><article class="card"><b>42</b><span>Teachers</span></article><article class="card"><b>5</b><span>Admin roles</span></article></section>
+      <section class="grid" id="modules"><article class="module"><span class="status">Admissions</span><h3>Admission Pipeline</h3><p>2026 batch has 630 generated records. Manage enquiries, campus visits and seat confirmation.</p></article><article class="module"><span class="status">Users</span><h3>Portal Accounts</h3><p>Student, parent, faculty, HOD and admin access can be reviewed from this panel.</p></article><article class="module"><span class="status">Finance</span><h3>Fee Desk</h3><p>Track paid, partial, due and overdue accounts with receipt status.</p></article></section>
+      <section class="card" id="records"><h2>Quick Records</h2><div class="table-wrap"><table><tr><th>Area</th><th>Total</th><th>Pending</th><th>Action</th></tr><tr><td>Student logins</td><td>1,190</td><td>0</td><td>Search / edit</td></tr><tr><td>Teacher logins</td><td>42</td><td>0</td><td>Department mapping</td></tr><tr><td>Admission enquiries</td><td>Live browser demo</td><td>Review</td><td>Export later</td></tr><tr><td>Notices</td><td>24</td><td>3 drafts</td><td>Publish</td></tr></table></div></section>
+    </div></section>
+  </main>
+  <script>document.getElementById('admin-id').textContent='Logged in as '+(localStorage.getItem('jgsAdminId')||'ADM-ROOT-001');</script>
+</body>
+</html>

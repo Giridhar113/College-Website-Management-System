@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JGS Faculty Portal</title>
+  <meta name="description" content="Standalone faculty portal login for JGS Group of Institutes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── DESIGN TOKENS ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg-page:#0B1A35;--bg-section:#112347;--bg-card:#1A3260;--bg-input:#0f1f45;--gold:#F5A623;--gold-hover:#FFC85C;--gold-tint:rgba(245,166,35,0.10);--gold-border:rgba(245,166,35,0.25);--text-primary:#FFFFFF;--text-sec:#B8C8E8;--text-muted:#6B82A8;--text-disabled:#3D5478;--success:#22C97A;--success-bg:rgba(34,201,122,0.10);--success-bdr:rgba(34,201,122,0.25);--error:#E84646;--error-bg:rgba(232,70,70,0.10);--info:#4A9FE8;--info-bg:rgba(74,159,232,0.10);--border:rgba(255,255,255,0.07);--border-hover:rgba(255,255,255,0.14);--radius:16px;--radius-sm:10px;--radius-xs:8px}
+    body{min-height:100vh;font-family:'DM Sans',sans-serif;background:var(--bg-page);color:var(--text-primary);line-height:1.55}
+    a{color:inherit}button,input{font:inherit;font-size:16px}button{cursor:pointer}
+    h1,h2,h3{font-family:'Syne',sans-serif;line-height:1.08}
+
+    /* ── FACULTY LOGIN APP ── */
+    .app{min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) 470px;background:linear-gradient(90deg,rgba(11,26,53,.96),rgba(11,26,53,.78)),url("images/Photo6.jpg") center/cover}
+    .left{display:flex;align-items:end;padding:72px 7vw}
+    .left-inner{max-width:760px}
+    .badge{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;margin-bottom:18px;border:1px solid var(--gold-border);border-radius:999px;background:var(--gold-tint);color:var(--gold);font-weight:700;font-size:13px}
+    h1{font-size:clamp(44px,7vw,84px);margin-bottom:18px}
+    .lead{max-width:620px;color:var(--text-sec);font-size:18px}
+    .ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+    .op{padding:15px;border:1px solid var(--border);border-radius:var(--radius-sm);background:rgba(26,50,96,.66);backdrop-filter:blur(12px)}
+    .op b{display:block;color:var(--gold);font-family:'Syne',sans-serif;margin-bottom:4px}
+    .op span{font-size:13px;color:var(--text-sec)}
+    .right{display:flex;align-items:center;padding:28px;background:rgba(11,26,53,.42);border-left:1px solid var(--border);backdrop-filter:blur(18px)}
+    .panel{width:100%;padding:24px;border:1px solid var(--border-hover);border-radius:24px;background:rgba(17,35,71,.86);box-shadow:0 28px 80px rgba(0,0,0,.34)}
+    .brand{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:22px}
+    .logo{display:flex;align-items:center;gap:12px}.mark{width:52px;height:52px;display:grid;place-items:center;border-radius:14px;background:var(--gold);color:var(--bg-page);font-family:'Syne';font-weight:800}.logo small{display:block;color:var(--text-muted)}
+    .role{min-height:34px;display:inline-flex;align-items:center;padding:0 10px;border-radius:999px;background:var(--info-bg);border:1px solid rgba(74,159,232,.24);color:var(--info);font-size:12px;font-weight:700}
+    .field{margin-bottom:14px}label{display:block;margin-bottom:7px;color:var(--text-sec);font-weight:500}
+    .input-row{position:relative}input{width:100%;min-height:50px;padding:12px 48px 12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--bg-input);color:var(--text-primary);outline:none}input:focus{border-color:var(--gold-border);box-shadow:0 0 0 3px var(--gold-tint)}
+    .toggle{position:absolute;right:7px;top:7px;min-width:38px;height:36px;border:0;border-radius:var(--radius-xs);background:var(--bg-card);color:var(--text-sec);font-size:12px}
+    .otp-row{display:grid;grid-template-columns:1fr 132px;gap:10px;align-items:end}
+    .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;border:0;border-radius:var(--radius-sm);font-weight:800;text-decoration:none}
+    .btn-primary{width:100%;margin-top:8px;background:var(--gold);color:var(--bg-page);box-shadow:0 14px 34px rgba(245,166,35,.2)}.btn-primary:hover{background:var(--gold-hover)}
+    .btn-secondary{background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border-hover)}
+    .demo{margin:16px 0;padding:14px;border:1px solid rgba(74,159,232,.24);border-radius:var(--radius);background:var(--info-bg);color:var(--text-sec)}
+    .demo h3{font-size:18px;margin-bottom:8px}.demo code{color:var(--gold);font-weight:800}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+    .status{display:none;margin:12px 0;padding:12px;border-radius:var(--radius-sm);font-size:14px}.status.show{display:block}.status.ok{background:var(--success-bg);border:1px solid var(--success-bdr);color:var(--success)}.status.err{background:var(--error-bg);border:1px solid rgba(232,70,70,.28);color:var(--error)}
+    .remember{display:flex;gap:10px;align-items:flex-start;margin:14px 0;color:var(--text-sec);font-size:14px}.remember input{width:18px;min-height:18px;margin-top:3px}
+    .helper{margin-top:16px;color:var(--text-muted);font-size:14px}.helper a{color:var(--gold);text-decoration:none}
+    .wa{position:fixed;right:20px;bottom:20px;z-index:9;min-height:50px;display:inline-flex;align-items:center;gap:10px;padding:0 18px;border-radius:999px;background:#25D366;color:#062915;font-weight:800;text-decoration:none;box-shadow:0 0 0 0 rgba(37,211,102,.45);animation:pulse 1.8s infinite}
+    @keyframes pulse{70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+    @media(max-width:768px){.app{grid-template-columns:1fr}.left{min-height:42vh;padding:72px 24px 24px}.right{padding:16px 16px 82px;border-left:0}.ops-grid{grid-template-columns:1fr 1fr}.wa span{display:none}.wa{width:52px;justify-content:center;padding:0}}
+    @media(max-width:480px){h1{font-size:40px}.ops-grid,.otp-row,.demo-grid{grid-template-columns:1fr}.brand{align-items:flex-start;flex-direction:column}.btn{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <!-- ── FACULTY BRAND SIDE ── -->
+    <section class="left">
+      <div class="left-inner">
+        <div class="badge">JGS Faculty Portal</div>
+        <h1>Faculty operations, without the public website noise.</h1>
+        <p class="lead">Mark attendance, upload marks, post notices, message parents, track syllabus, manage leave and access department tools from one standalone dashboard.</p>
+        <div class="ops-grid">
+          <div class="op"><b>Classes</b><span>Attendance, timetable and substitute duty.</span></div>
+          <div class="op"><b>Academics</b><span>Marks, syllabus and study material.</span></div>
+          <div class="op"><b>HR</b><span>Leave, profile, payslip and FDP records.</span></div>
+        </div>
+      </div>
+    </section>
+    <!-- ── LOGIN PANEL ── -->
+    <section class="right">
+      <form class="panel" id="teacher-form">
+        <div class="brand"><div class="logo"><div class="mark">JGS</div><div><h2>Faculty Login</h2><small>Standalone portal access</small></div></div><span class="role">Faculty / HOD</span></div>
+        <div class="field"><label for="faculty-id">Faculty ID / Mobile</label><input id="faculty-id" placeholder="FAC-CSE-024 or 9876543210" /></div>
+        <div class="otp-row"><div class="field"><label for="pin">OTP / Portal PIN</label><div class="input-row"><input id="pin" type="password" maxlength="6" placeholder="Enter 6-digit PIN" /><button class="toggle" type="button">Show</button></div></div><button class="btn btn-secondary" id="send-otp" type="button">Send OTP</button></div>
+        <div class="status" id="status"></div>
+        <label class="remember"><input type="checkbox" />Remember this device for 30 days</label>
+        <button class="btn btn-primary" type="submit">Open Faculty Dashboard</button>
+        <p class="helper">Forgot credentials? <a href="https://wa.me/912248901100?text=Hi%2C%20I%20need%20faculty%20portal%20login%20help" target="_blank" rel="noopener">WhatsApp portal admin</a> or <a href="tel:+912248901100">call +91 22 4890 1100</a>.</p>
+      </form>
+    </section>
+  </main>
+  <a class="wa" href="https://wa.me/912248901100?text=Hi%2C%20I%20need%20faculty%20portal%20help" target="_blank" rel="noopener">WA <span>Faculty Help</span></a>
+  <script>
+    /* ── FACULTY LOGIN ── */
+    const baseFaculty=['Asha Mehta','Rohan Kulkarni','Irene Fernandes','Sameer Verma','Nisha Rao','Amit Joshi','Farah Khan','Dev Patel','Leena Dsouza','Omkar Shinde','Pooja Nair','Rahul Sethi','Maya Thomas','Karan Malhotra','Sneha Kapoor','Vikram Iyer','Reema Shah','Gaurav Menon','Anil Reddy','Tara Bose','Nitin Pawar','Sonal Jain','Harish Pillai','Divya Rao','Prakash More','Fatima Ansari','Jay Mehta','Meenal Desai','Suresh Naik','Nandita Roy','Ajay Bhat','Ritika Sen','Pranav Gokhale','Bhavna Gupta','Zoya Mirza','Vivek Patil','Ramesh Shetty','Anuja Kale','Manish Arora','Esha Banerjee','Sunil Dube','Lavanya Krishnan'];
+    const deptCycle=['CSE','AIML','ECE','EEE','MECH','CIVIL','SCIENCE'];
+    const faculty=baseFaculty.map((name,i)=>{const dept=deptCycle[i%deptCycle.length],hod=i<6;return{name,id:hod?`HOD-${dept}-${String(i+1).padStart(3,'0')}`:`FAC-${dept}-${String(i+1).padStart(3,'0')}`,mobile:`98800${String(11000+i).slice(-5)}`,dept,role:hod?'HOD':'Faculty',subjects:hod?'Department analytics, approvals, academic review':'Attendance, marks, mentoring, study material'}});
+    const id=document.getElementById('faculty-id'),pin=document.getElementById('pin'),statusBox=document.getElementById('status'),send=document.getElementById('send-otp');let timer=0,interval=null,selectedFaculty=faculty[23];
+    function chooseFaculty(item){selectedFaculty=item;localStorage.setItem('jgsSelectedFaculty',JSON.stringify(item));localStorage.setItem('jgsFacultyRole',item.role==='HOD'?'hod':'faculty');}
+    function show(text,type='ok'){statusBox.textContent=text;statusBox.className='status show '+type}
+    document.querySelector('.toggle').addEventListener('click',e=>{pin.type=pin.type==='password'?'text':'password';e.currentTarget.textContent=pin.type==='password'?'Show':'Hide'});
+    send.addEventListener('click',()=>{if(!id.value.trim()){show('Enter Faculty ID or registered mobile first.','err');return}show('OTP sent to the registered faculty contact.');timer=60;send.disabled=true;send.textContent='Resend in 60s';clearInterval(interval);interval=setInterval(()=>{timer--;send.textContent='Resend in '+timer+'s';if(timer<=0){clearInterval(interval);send.disabled=false;send.textContent='Send OTP'}},1000)});
+    document.getElementById('teacher-form').addEventListener('submit',e=>{e.preventDefault();selectedFaculty=faculty.find(f=>f.id.toLowerCase()===id.value.trim().toLowerCase()||f.mobile===id.value.trim())||selectedFaculty;if(!id.value.trim()||pin.value.trim().length<4){show('Enter Faculty ID and OTP/PIN.','err');return}localStorage.setItem('jgsSelectedFaculty',JSON.stringify(selectedFaculty));localStorage.setItem('jgsFacultyRole',selectedFaculty.role==='HOD'?'hod':'faculty');show(`Verified ${selectedFaculty.name} (${selectedFaculty.role}). Opening faculty dashboard...`);setTimeout(()=>location.href='teacher-dashboard.html',600)});
+  </script>
+</body>
+</html>

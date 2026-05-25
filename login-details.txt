@@ -1,0 +1,122 @@
+JGS Portal Login Details
+========================
+
+Common demo OTP / PIN for all portals:
+123456
+
+
+Student Login
+-------------
+Page: student-login.html
+
+Use either mobile number or roll number + DOB.
+DOB can be any valid date for this demo.
+
+Student records:
+- 2024 batch: 180 students
+- 2025 batch: 380 students
+- 2026 batch: 630 students
+- Total students: 1,190
+
+Departments:
+- AI & ML
+- Computer Science
+- ECE
+- EEE
+- Mechanical
+- Civil
+
+Sample student logins:
+- Roll: JGS/AIML/2022/047
+  Mobile: 9876543210
+
+- Roll: JGS2026CS041
+  Mobile: 9876543211
+
+- Roll: JGS2024AIML001
+- Roll: JGS2024CS002
+- Roll: JGS2024EC003
+- Roll: JGS2024EE004
+- Roll: JGS2024ME005
+- Roll: JGS2024CE006
+
+- Roll: JGS2025AIML001
+- Roll: JGS2025CS002
+- Roll: JGS2025EC003
+- Roll: JGS2025EE004
+- Roll: JGS2025ME005
+- Roll: JGS2025CE006
+
+- Roll: JGS2026AIML001
+- Roll: JGS2026CS002
+- Roll: JGS2026EC003
+- Roll: JGS2026EE004
+- Roll: JGS2026ME005
+- Roll: JGS2026CE006
+
+
+Parent Login
+------------
+Page: parent-login.html
+
+Use either registered parent mobile number or child roll number + DOB.
+DOB can be any valid date for this demo.
+
+Sample parent login:
+- Mobile: 9876543210
+- Child Roll: JGS2026CS041
+
+
+Teacher Login
+-------------
+Page: teacher-login.html
+
+Use Faculty ID / HOD ID or registered mobile.
+
+Departments:
+- CSE
+- AIML
+- ECE
+- EEE
+- MECH
+- CIVIL
+- SCIENCE
+
+Sample teacher logins:
+- HOD-CSE-001
+- HOD-AIML-002
+- HOD-ECE-003
+- HOD-EEE-004
+- HOD-MECH-005
+- HOD-CIVIL-006
+- FAC-SCIENCE-007
+- FAC-CSE-008
+- FAC-AIML-009
+- FAC-ECE-010
+- FAC-EEE-011
+- FAC-MECH-012
+- FAC-CIVIL-013
+- FAC-SCIENCE-014
+- FAC-ECE-024
+
+There are 42 generated teacher accounts total.
+
+
+Admin Login
+-----------
+Page: admin-login.html
+
+Admin IDs:
+- ADM-ROOT-001      Principal / Super Admin
+- ADM-ADMS-002      Admissions Office
+- ADM-FEES-003      Fees Office
+- ADM-EXAM-004      Exam Cell
+- ADM-PORTAL-005    Portal Manager
+
+
+Payment Demo
+------------
+Page: payment.html
+
+Payment is a client-side demo.
+It saves the latest receipt in browser localStorage and can print/share a receipt.
